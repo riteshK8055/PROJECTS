@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const taskSchema = new mongoose.Schema({
 
     name:{
 
@@ -27,4 +27,4 @@ const userSchema = new mongoose.Schema({
 );
 
 
-export const User = mongoose.model("User", userSchema);
+export const Task = mongoose.model("Task", taskSchema);
