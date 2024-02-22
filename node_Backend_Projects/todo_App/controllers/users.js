@@ -1,6 +1,5 @@
 import { User } from "../models/users.models.js";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 import { sendCookie } from "../utils/features.js";
 
 
@@ -60,4 +59,18 @@ export const register = async(req,res)=>{
 
         sendCookie(user,res,"Registered Successfully",201);
         
+};
+
+//get user details
+
+export const getMyProfile = async(req,res,next)=>{
+
+
+    res.status(200).json({
+
+        success:true,
+        user:req.user,
+    });
+
+
 };
