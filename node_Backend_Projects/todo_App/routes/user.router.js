@@ -1,6 +1,6 @@
 import express from "express";
 
-import { getMyProfile, login, register } from "../controllers/users.js";
+import { getMyProfile, login, logout, register } from "../controllers/users.js";
 
 import { isAuthenticated } from "../middlewares/auth.js";
 
@@ -11,6 +11,8 @@ router.post("/login", login);
 router.post("/register",register);
 
 router.get("/me",isAuthenticated,getMyProfile);
+
+router.get("/logout", logout);
 
 
 export default router;
